@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Peptides | Research Compounds</title>
+    <style>
+        :root {
+            --primary: #4a6fa5;
+            --secondary: #166088;
+            --accent: #4fc3f7;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --success: #28a745;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69') center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: white;
+            padding: 0.7rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #3da8d8;
+        }
+        
+        .disclaimer {
+            background-color: #fff8e1;
+            padding: 1rem;
+            border-left: 4px solid #ffc107;
+            margin: 2rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .products {
+            padding: 3rem 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark);
+        }
+        
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .product-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 200px;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        .product-info {
+            padding: 1.5rem;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .product-description {
+            color: #666;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            padding: 0.7rem;
+            background: var(--success);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background: #218838;
+        }
+        
+        .about {
+            padding: 3rem 0;
+            background: #f8f9fa;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .about-image {
+            background-color: #e0e0e0;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+        
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: white;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            font-size: 0.9rem;
+            color: #adb5bd;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">Premium Peptides</div>
+            <nav>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#cart">Cart</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Premium Research Peptides</h1>
+            <p>High-quality peptides for research purposes only. Laboratory tested for purity and accuracy.</p>
+            <a href="#products" class="btn">View Products</a>
+        </div>
+    </section>
+    
+    <div class="container disclaimer">
+        <p><strong>Disclaimer:</strong> These products are for research use only. Not for human consumption. All information provided on this site is for educational purposes only.</p>
+    </div>
+    
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Products</h2>
+            <div class="product-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        [BPC-157 Image]
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">BPC-157 5mg</h3>
+                        <div class="product-price">$49.99</div>
+                        <p class="product-description">BPC-157 is a synthetic peptide that may support tissue repair and healing processes in research settings.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        [TB-500 Image]
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">TB-500 2mg</h3>
+                        <div class="product-price">$59.99</div>
+                        <p class="product-description">TB-500 is a synthetic version of the naturally occurring peptide present in virtually all human and animal cells.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        [Ipamorelin Image]
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Ipamorelin 5mg</h3>
+                        <div class="product-price">$44.99</div>
+                        <p class="product-description">Ipamorelin is a growth hormone secretagogue that may stimulate the pituitary gland to release growth hormone.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card">
+                    <div class="product-image">
+                        [CJC-1295 Image]
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">CJC-1295 2mg</h3>
+                        <div class="product-price">$54.99</div>
+                        <p class="product-description">CJC-1295 is a synthetic peptide that may increase plasma growth hormone levels in research models.</p>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Our Company</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Premium Quality Peptides</h3>
+                    <p>We specialize in providing high-purity research peptides to the scientific community. Our products undergo rigorous third-party testing to ensure quality and consistency.</p>
+                    <p>Founded in 2023, our mission is to support researchers with reliable, high-quality compounds for their important work. We work with certified laboratories and follow strict quality control protocols.</p>
+                    <p>All products are sold for research purposes only and are not intended for human consumption.</p>
+                </div>
+                <div class="about-image">
+                    [Lab Equipment Image]
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#products">Products</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#terms">Terms</a>
+                <a href="#privacy">Privacy</a>
+            </div>
+            <div class="copyright">
+                &copy; 2023 Premium Peptides. All rights reserved. For research use only.
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
